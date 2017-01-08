@@ -17,7 +17,7 @@ namespace NanoCart.Tests
             var context = TestUtilities.GetMockedHttpContext();
             var persistanceProvider = new Providers.SessionCartPersistanceProvider(context.Session);
 
-            var sessionKey = persistanceProvider.GetSessionKey(cartId);
+            var sessionKey = persistanceProvider.GetSessionKey(new Guid(_cartId));
 
             sessionKey.Should().Be("nanocart_fb622491-d7aa-4d94-bb08-3ada030c9330");
         }
